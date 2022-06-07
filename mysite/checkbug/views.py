@@ -90,6 +90,7 @@ def delete(request):
    return redirect('/about/client')
    
 def edit(request):
+  if request.method=='POST':
     f= request.POST.get("topic","")
     s= request.POST.get("description","")
     d= request.POST.get("id", )
@@ -99,6 +100,7 @@ def edit(request):
         'id': d
         }
     return render(request,'edit.html',context)
+  else: return redirect('/about/client')
 def fedit(request):
 
 
