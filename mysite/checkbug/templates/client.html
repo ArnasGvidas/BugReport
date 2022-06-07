@@ -12,16 +12,14 @@
      <title></title>
  </head>
  
- <body style="background:rgb(100, 169, 212)">
+ <body style="background:rgb(49, 49, 49)">
  <br>
- <section class="pt-2 container bg-white border border-dark rounded"  style="max-width:850px">
+ <section class="pt-2 container border border-dark rounded text-light"  style="background:   rgb(65, 65, 65); max-width:850px">
 
     <form action="/about/client/logout" method="POST">
         {% csrf_token %}
         {{ form }}
-        <div style="text-align:center">
-            <button type="sumbit"  class = "px-5 py-2 btn btn-outline-danger" value="Submit"> {% trans "logout" %} </button> 
-        </div>
+            <button type="sumbit" style="opacity:85%" class = "px-5 py-2 btn btn-danger" value="Submit"> {% trans "logout" %} </button> 
      </form>
 <hr>    
 
@@ -29,27 +27,27 @@
      {% csrf_token %}
      {{ form }}
              <p><label for="/about/client" class="form-label">{% trans "Topic" %}</label>
-                 <input id="company" type="text" name="company" maxlength="200" class="form-control" required ></p>
+                 <input id="company" type="text" name="company" maxlength="200" class="form-control bg-dark text-light border-secondary" required ></p>
              <p><label for="/about/client" class="form-label">{% trans "Description" %}</label>
-                 <textarea id="date" type="text" name="date" maxlength="200" class="form-control"  required></textarea>
+                 <textarea id="date" type="text" name="date" maxlength="200" class="form-control bg-dark text-light border-secondary"  required></textarea>
 <div style="text-align:center">
-     <button type="sumbit" class="btn btn-outline-primary" value="Submit"> {% trans "Post" %} </button>
+     <button type="sumbit" style="opacity:85%" class="btn btn-warning" value="Submit"> {% trans "Post" %} </button>
 </div>
 
  </form>
  <hr>
- <table class="table table-striped table-bordered table-rounded container border ">
-    <th>{% trans "Topic" %}</th>
-    <th>{% trans "Description" %}</th>
-    <th>{% trans "Status" %}</th>
-    <th>{% trans "Edit/Delete   " %}</th>
+ <table class="table table-bordered table-rounded container text-light" style="border-color:rgb(107, 106, 106)">
+    <th style="background: rgb(87, 86, 86);">{% trans "Topic" %}</th>
+    <th style="background: rgb(87, 86, 86);">{% trans "Description" %}</th>
+    <th style="background: rgb(87, 86, 86);">{% trans "Status" %}</th>
+    <th style="background: rgb(87, 86, 86);">{% trans "Edit/Delete   " %}</th>
 </tr>
 {% for item in query %}
     <tr > 
-        <td>{{ item.Topic }}</td>   
-        <td class="overflow-hidden" style="max-width: 450px;">{{ item.Description }}</td>   
-        <td>{{ item.Status }}</td>
-        <td>
+        <td style="background: rgb(70, 69, 69)">{{ item.Topic }}</td>   
+        <td class="overflow-hidden" style="max-width: 450px; background: rgb(70, 69, 69)">{{ item.Description }}</td>   
+        <td style="background: rgb(70, 69, 69)">{{ item.Status }}</td>
+        <td style="background: rgb(70, 69, 69)">
             <div class="d-inline-flex">
 
             {% if item.Status != 'Solved' %}
@@ -68,7 +66,7 @@
             {% csrf_token %}
             {{ form }}
             <input id="date" type="text" name="date" maxlength="100" class="form-control" value={{ item.id }} hidden required>
-            <button type="sumbit" class="btn btn-danger" value="Submit"><i class="bi bi-trash"> Delete</i></button>
+            <button type="sumbit" class="btn btn-danger" value="Submit" style="opacity:95%"><i class="bi bi-trash"> Delete</i></button>
         </div>
         </form>
     </td>

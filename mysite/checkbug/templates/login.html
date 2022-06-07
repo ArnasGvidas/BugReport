@@ -12,21 +12,22 @@
      <title></title>
  </head>
  
- <body style="background:rgb(100, 169, 212)">
+ <body style="background:rgb(49, 49, 49)">
 
-
+<br>
+<br>
  
- <div class="d-flex align-content-center flex-wrap">
- <section class="pt-2 container bg-white border border-dark rounded" style="max-width:450px">
+ <div class="d-flex align-content-center flex-wrap ">
+ <section class="pt-2 container border border-dark text-light rounded" style="background-color: rgb(65, 65, 65); max-width:450px">
  <form action="/about/" method="POST">
      {% csrf_token %}
      {{ form }}
              <p><label for="/about/" class="form-label">{% trans "Username" %}</label>
-                 <input id="company" type="text" name="company" maxlength="100" class="form-control" required ></p>
+                 <input id="company" type="text" name="company" maxlength="100" class="form-control bg-dark border-secondary text-light" required ></p>
             <p><label for="/about/" class="form-label">{% trans "Password" %}</label>
-                 <input id="date" type="password" name="date" maxlength="100" class="form-control"  required></p>
+                 <input id="date" type="password" name="date" maxlength="100" class="form-control bg-dark border-secondary text-light" required></p>
      <div style="text-align:center">
-        <button type="sumbit" class="btn btn-outline-success px-5 py-2" value="Submit"> {% trans "Login" %} </button>
+        <button type="sumbit" style="opacity:85%" class="btn btn-warning px-5 py-2" value="Submit"> {% trans "Login" %} </button>
      </div>
  </form>
  <br>

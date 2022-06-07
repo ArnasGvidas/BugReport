@@ -12,16 +12,16 @@
      <title></title>
  </head>
  
- <body style="background:rgb(100, 169, 212)">
+ <body style="background:rgb(49, 49, 49)">
  <br>
 
- <section class="container bg-white border rounded">
+ <section class="container border border-dark text-light rounded" style="background: rgb(70, 69, 69)">
 
 
  <form action="/about/client" method="GET" class="my-3">
     {% csrf_token %}
     {{ form }}
-        <button type="sumbit"  class = "px-5 py-2 btn btn-outline-danger" value="Submit"> {% trans "Return" %} </button> 
+        <button type="sumbit" style="opacity: 85%"  class = "px-5 py-2 btn btn-danger" value="Submit"> {% trans "Return" %} </button> 
  </form>
 
  <hr>
@@ -33,12 +33,12 @@
 
 
              <p><label for="/about/client/edit/fedit" class="form-label">{% trans "Topic" %}</label>
-                 <input id="company" type="text" name="topic" maxlength="200" class="form-control" value= {{ topic }} required ></p>
+                 <input id="company" type="text" name="topic" maxlength="200" class="form-control bg-dark text-light border-secondary" value= {{ topic }} required ></p>
              <p><label for="/about/client/edit/fedit" class="form-label">{% trans "Description" %}</label>
-                 <input id="date" type="text" name="description" maxlength="200" class="form-control" value= {{ description }} required></input>
+                 <input id="date" type="text" name="description" maxlength="200" class="form-control bg-dark text-light border-secondary" value= {{ description }} required></input>
                  <input id="date" type="text" name="id" maxlength="100" class="form-control" value={{ id }} hidden required>
                  <div style="text-align:center">
-                    <button type="sumbit" class="btn btn-outline-primary" value="Submit"> {% trans "Post Edit" %} </button>
+                    <button type="sumbit" class="btn btn-warning" style="Opacity: 85%" value="Submit"> {% trans "Post Edit" %} </button>
                 </div>
                 <br>
                  
