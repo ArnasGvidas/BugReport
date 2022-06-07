@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from checkbug.views import validatelogin,customers,programmer,solution, Solved, logout,delete,edit,fedit
+from checkbug.views import validatelogin,customers,programmer,solution, Solved, logout,delete,edit,fedit,insertdata
 urlpatterns = [
     path('about/', validatelogin),
     path('about/client', customers),
@@ -26,5 +26,6 @@ urlpatterns = [
     path('about/programmer/solution', solution),
     path('about/programmer/Solved', Solved),
     path('admin/', admin.site.urls),
-    path('about/client/logout', logout)
+    path('about/client/logout', logout),
+    path('about/client/insertdata', insertdata)
 ]

@@ -44,10 +44,7 @@ def customers(request):
     for item in querry:
         id=item['UID']
     request.session['user_id']
-    f = request.POST.get("company", "")
-    s = request.POST.get("date", "")
-    if len(f)>0:
-        problem.objects.create(Topic=f, Description=s, Status="Unchecked",Customer_id=id)
+ 
     query=(problem.objects
     .values('Topic','Description','Status','id')
     .filter(Customer_id=id)
@@ -106,3 +103,16 @@ def fedit(request):
 
     problem.objects.filter(id=request.POST.get("id",)).update(Topic=(request.POST.get("topic","")),Description=(request.POST.get("description","")))
     return redirect('/about/client')
+def insertdata(request):
+  querry = (customer.objects
+    .values('UID')
+    .filter(UID=request.session['user_id'])
+    )
+  for item in querry:
+    id=item['UID']
+  request.session['user_id']
+  f = request.POST.get("company", "")
+  s = request.POST.get("date", "")
+  if len(f)>0:
+      problem.objects.create(Topic=f, Description=s, Status="Unchecked",Customer_id=id)
+  return redirect('/about/client')
